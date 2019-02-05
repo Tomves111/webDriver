@@ -1,9 +1,15 @@
 package com.herokuapp.theinternet;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 
 public class ExceptionTest {
@@ -22,6 +28,25 @@ public class ExceptionTest {
 		driver.manage().window().maximize();
 	
 	}
+	
+		@Test
+		public void notVisibleTest() {
+			//open the page 
+			String url = "http://the-internet.herokuapp.com/dynamic_loading/1";
+			driver.get(url);
+			sleep(2000);
+			System.out.println("Page is opened.");
+			
+			WebElement startButton = driver.findElement(By.xpath("//button"));
+			startButton.click();
+			
+			WebElement finishText = driver.findElement(By.id("finish"));
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOf(finishText));
+			
+			Assert.assertTrue(finishText.getText().contentEquals("Hello World!"),"'Hello World! text is not present on the page.'");
+			
+			}
 	
 		@AfterMethod
 		private void tearDown() {
