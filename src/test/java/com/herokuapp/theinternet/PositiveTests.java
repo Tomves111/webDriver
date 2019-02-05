@@ -22,7 +22,7 @@ public class PositiveTests {
 		sleep(3000);
 
 		driver.manage().window().maximize();
-		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		// open the page
 		String url = "http://the-internet.herokuapp.com/login";
@@ -33,13 +33,14 @@ public class PositiveTests {
 		// enter username
 		WebElement username = driver.findElement(By.id("username"));
 		username.sendKeys("tomsmith");
-
+		
 		// enter password
 		WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys("SuperSecretPassword!");
 
 		WebDriverWait wait1 = new WebDriverWait(driver, 10);
-
+		
+		
 		// push log in button
 		WebElement logInButton = driver.findElement(By.className("radius"));
 		try {

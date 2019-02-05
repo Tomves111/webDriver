@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ExceptionTestSuite" verbose="1">
+
+	<test name="ExceptionTest">
+		<classes>
+			<class name="com.herokuapp.theinternet.ExceptionTest" />
+		</classes>
+	</test>
+
+</suite>
