@@ -1,30 +1,52 @@
 package com.herokuapp.theinternet;
 
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.AfterMethod;
+
 
 public class NegativeTests {
+		WebDriver driver;
+		
+		@Parameters({ "browser" })
+	    @BeforeMethod
+		protected void setUp(@Optional("chrome")String browser ) {
+	    	// Create driver
+	    	System.out.println("Create driver:" + browser);
+	    	
+	    	switch (browser) {
+			case "chrome":
+				System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+			    driver = new ChromeDriver();
+				break;
+			
+			case "firefox":
+				System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodrive");
+				driver = new FirefoxDriver();
+			default:
+				break;
+			}
+	    	
+	
 
+			sleep(3000);
+
+			driver.manage().window().maximize();
+			
+		}
+    @Parameters({ "username", "password", "expectedMessage" })
 	@Test(priority = 1, groups = { "smokeTests", "negativeTests"})
 	public void incorrectUsernameTest() {
 		System.out.println("Starting incorrectUsernameTest");
 		
-		// Create driver
-		System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-
-		sleep(3000);
-
-		driver.manage().window().maximize();
 		// driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		// open the page
@@ -55,13 +77,18 @@ public class NegativeTests {
 						+ expectedErrorMessage + "\nactualErrorMessage: " + actualErrorMessage);
 		
 
-	
-		sleep(3000);
-
-		// Close browser
-		driver.quit();
 
 	}
+    
+    @AfterMethod
+	protected void tearDown( ) {
+    	sleep(3000);
+    	System.out.println("Close Driver");
+		// Close browser
+		driver.quit();
+		
+	}
+    
 
 	/** Static sleep */
 	private void sleep(long millis) {
