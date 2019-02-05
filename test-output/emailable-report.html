@@ -8,31 +8,21 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">PositiveTestSuite</th></tr>
-<tr><td><a href="#t0">PositiveTest</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">15,109</td><td></td><td></td></tr>
+<tr><th colspan="7">NegativeTestSuite</th></tr>
+<tr><td><a href="#t0">NegativeUsernameTest-CH</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">20 444</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">NegativeUsernameTest-FF</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">35 181</td><td></td><td></td></tr>
+<tr><td><a href="#t2">NegativePasswordTest-CH</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">15 431</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">NegativePasswordTest-FF</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">24 575</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">4</th><th class="num">0</th><th class="num">0</th><th class="num">95 631</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">PositiveTestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">PositiveTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.herokuapp.theinternet.PositiveTests</td><td><a href="#m0">logInTest</a></td><td rowspan="1">1548808388533</td><td rowspan="1">15063</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">NegativeTestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">NegativeUsernameTest-CH &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.herokuapp.theinternet.NegativeTests</td><td><a href="#m0">incorrectUsernameTest</a></td><td rowspan="1">1549364585202</td><td rowspan="1">4864</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">NegativeUsernameTest-FF &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.herokuapp.theinternet.NegativeTests</td><td><a href="#m1">incorrectUsernameTest</a></td><td rowspan="1">1549364620536</td><td rowspan="1">4924</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">NegativePasswordTest-CH &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.herokuapp.theinternet.NegativeTests</td><td><a href="#m2">incorrectUsernameTest</a></td><td rowspan="1">1549364636358</td><td rowspan="1">4782</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">NegativePasswordTest-FF &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.herokuapp.theinternet.NegativeTests</td><td><a href="#m3">incorrectUsernameTest</a></td><td rowspan="1">1549364660931</td><td rowspan="1">4847</td></tr></tbody>
 </table>
-<h2>PositiveTest</h2><h3 id="m0">com.herokuapp.theinternet.PositiveTests#logInTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=2.45.615291 (ec3682e3c9061c10f26ea9e5cdcf3c53f3f74387),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;DESKTOP-SHS5AF2&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\Petra\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58524}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: abeb5fded71c0579fea2246ebaa3f57a
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:836)
-	at com.herokuapp.theinternet.PositiveTests.logInTest(PositiveTests.java:24)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>NegativeUsernameTest-CH</h2><h3 id="m0">com.herokuapp.theinternet.NegativeTests#incorrectUsernameTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>NegativeUsernameTest-FF</h2><h3 id="m1">com.herokuapp.theinternet.NegativeTests#incorrectUsernameTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>NegativePasswordTest-CH</h2><h3 id="m2">com.herokuapp.theinternet.NegativeTests#incorrectUsernameTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>NegativePasswordTest-FF</h2><h3 id="m3">com.herokuapp.theinternet.NegativeTests#incorrectUsernameTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
